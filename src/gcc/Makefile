@@ -10,12 +10,12 @@ lib:
 	gcc -o inc/list.o -g -Wall -c -std=c99 inc/list.c
 	ar crv inc/liblist.a inc/list.o
 	#to produce segment-independent code
-	gcc -o inc/liblist.so -Wall --shared -fPIC inc/list.c
+	gcc -o inc/liblist.so -g -Wall --shared -fPIC inc/list.c
 	#-fPIC always works(but may generate larger file), but -fpic may fail on some platforms
 	#gcc -o inc/liblist.so -Wall --shared -fpic inc/list.c
 	#gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist
 	#gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/
-	gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/,--enable-new-dtags 
+	gcc -o run.exe -g -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/,--enable-new-dtags 
 	# To run, the ld.so path must be modified via LD_LIBRARY_PATH or /etc/ld.so.cache
 
 .PHONY: clean

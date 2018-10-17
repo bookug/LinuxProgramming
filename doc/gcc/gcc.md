@@ -318,7 +318,13 @@ ld -o run.exe example.o inc/list.o -lc -lm
 对于这种循环依赖问题，也可以用`-Wl,--start-group -lA -lB -Wl,--end-group`[这种方法](http://blog.sina.com.cn/s/blog_a9303fd90101cy5y.html)。
 推荐查阅[GCC官方文档](https://gcc.gnu.org/onlinedocs/gcc-4.8.5/gcc/Link-Options.html#Link-Options)，请选择相应的版本对应的文档。
 
-复杂的编译命令可写在 Makefile 中
+复杂的编译命令可写在 Makefile 中，make、cmake和autoconf的使用(Qt中使用qmake来管理，还有一些人用xmake等等)
+- https://blog.csdn.net/weixin_38391755/article/details/80380786
+- https://blog.csdn.net/gg_18826075157/article/details/72780431
+- https://blog.csdn.net/shutdown_r_now/article/details/51103668?utm_source=blogxgwz2
+- https://www.ibm.com/developerworks/cn/linux/l-makefile/
+- https://blog.csdn.net/cnsword/article/details/7542696
+- https://blog.csdn.net/dc_726/article/details/48978849?utm_source=blogxgwz0
 
 C11和C14标准
 
@@ -361,13 +367,13 @@ Linux 上通过这种方式，来解决库版本依赖的问题，更换库版�
 下面是一些使用示例，用`-Wl`来表示将后面的参数传给链接器，注意中间不要加空格。
 
 ```
-gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist
+gcc -o run.exe -g -Wall -std=c99 example.c -I./inc -L./inc -lm -llist
 echo $LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=${YOUR_PATH}:$LD_LIBRARY_PATH
 echo $LD_LIBRARY_PATH
 unset LD_LIBRARY_PATH
-gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/
-gcc -o run.exe -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/,--enable-new-dtags 
+gcc -o run.exe -g -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/
+gcc -o run.exe -g -Wall -std=c99 example.c -I./inc -L./inc -lm -llist -Wl,--rpath=./inc/,--enable-new-dtags 
 ```
 
 上面的`DT_RPATH`和`DT_RUNPATH`中，都是使用相对路径，这在当前目录执行程序是没有问题的。
@@ -394,7 +400,7 @@ Linux 下的库文件分为两大类分别是动态链接库（通常以.so 结�
 例如，如果在inc 目录下有链接时所需要的库文件liblist.so 和liblist.a ，为了让GCC 在链接时只用到静态链接库，可以使用下面的命令（这要求链接到的其他系统库也要安装好相应的静态库版本）：
 
 ```
-gcc -o run.exe -std=c99 example.c -static -I./inc -L./inc -llist -lm
+gcc -o run.exe -g -std=c99 example.c -static -I./inc -L./inc -llist -lm
 
 ```
 
@@ -419,7 +425,7 @@ ar crv inc/liblist.a inc/list.o
 - 甚至可以真正做到链接载入完全由程序员在程序代码中控制（显示调用）
 
 ```
- gcc -o inc/liblist.so -Wall --shared -fpic inc/list.c
+ gcc -o inc/liblist.so -g -Wall --shared -fpic inc/list.c
 ```
 
 ### 拓展（不讲）
