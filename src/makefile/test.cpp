@@ -1,9 +1,17 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "defs.h"
+#include <iostream>
 
+using namespace std;
 
-int main(void){
+class Test
+{
+	public:
+		int x;
+};
+
+int main(){
     point    *p;
     
     p = (point*)malloc(sizeof(point));
