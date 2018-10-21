@@ -13,3 +13,9 @@ void display(point *p){
     printf("Output:\nx + y = %lf\n", p->x + p->y);
     return;
 }
+
+void func()
+{
+	printf("hello, world!\n");
+}
+
