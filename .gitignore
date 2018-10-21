@@ -2,8 +2,13 @@
 *.sw[op]
 
 # executables
+*.pyc
 *.exe
 *.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
 # debug files
 vgcore.*
@@ -11,10 +16,88 @@ core.*
 
 # result file
 *.txt
+*.log
 
+#download files
+*.torrent
+*.iso 
+#compressed files
+*.tar.bz2
+*.zip
+*.tar.gz 
+*.tar.bz2
+*.7z 
+*.rar 
+
+#compiled objects
+*.o
+*.class
 *.i
 *.ii
 *.s
 *.S
 *.a
 *.so
+*.so.*
+*.jar
+*.lib
+*.dylib
+*.dll
+*.la
+*.lo
+*.ko
+*.obj
+*.elf
+
+
+#temp files
+*.dat
+#datasets
+*.nt
+*.n3
+#databases
+*.db
+
+# Debug files
+*.dSYM/
+
+# IDE files
+cscope*
+.cproject
+.project
+tags
+.settings
+
+# latex files
+*.aux
+*.toc
+*.synctex.gz
+*.log
+*.out
+*.bak~
+
+# queries
+*.sql
+*.sh
+
+# modules
+node_modules
+
+# query results
+*.info
+
+#pictures
+*.jpg
+*.jpeg
+*.png
+*.pdf
+#music and movie
+*.mp3
+*.wav
+*.mp4
+*.rmvb
+
+# Precompiled Headers
+*.gch
+*.pch
+
