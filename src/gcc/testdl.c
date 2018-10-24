@@ -69,6 +69,8 @@ int main(int argc, const char* argv[])
 {
     produceData();
     //NOTICE: in this case the code below will be run and output even the liblist.so is not found
+    //The reason is that when compiling the -llist is not added, and it will not occur in the header part of executable if using readelf -d to check
+    //In the case of using dynamic library and using -llist when compiling, the liblist.so occurs in the header, so the system will find it first when this executable starts running(you can use strace command to see this process)
     printf("check before dynamic\n");
 
     void *lib_handle;
