@@ -6,6 +6,10 @@
 # Description: union two sorted lists, and apply the sqrt operator on each item
 # For debug, gcc -lm -g inc/list.c example.c -o run.exe
 # To release, gcc -O2 -lm inc/list.c example.c -o run.exe
+
+use of objdump
+https://blog.csdn.net/zoomdy/article/details/50563680
+https://www.cnblogs.com/justin-y-lin/p/5599217.html
 =============================================================================*/
 
 #include <stdio.h>

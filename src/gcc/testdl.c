@@ -6,7 +6,7 @@
 # Description: use dlopen and dlclose to call dynamic libraries
 # http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 # gcc -std=c99 -rdynamic -o run.exe -I./inc testdl.c -ldl -lm
-# Discuss: it seems the -rdynamic option can be removed?
+# Discuss: it seems the -rdynamic option can be removed? -rdynamic is used to print more debug information
 # Experiment: the advantages of using dlopen/dlclose, a library opened by system will occupy memory and a file descriptor
 # How to see the libraries that has been loaded into memory? (ldd only sees the dependency)
 # 1. find the pid of your program by ps command, and go to /proc and cd the pid directory, cat maps to see the memory region mappings
