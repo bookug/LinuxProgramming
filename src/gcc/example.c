@@ -106,6 +106,10 @@ int main(int argc, const char* argv[])
     }
 
     //NOTICE: another bug exists here, but error is not reported when running
+	//This is because system will only report error if this region is already used by another program(or the kernel)
+	//Otherwise system will not spend time on clearing its content, so you can still access it as before
+	//However, theorectically it has been freed and access is invalid, may cause unsure risks
+	//(it may runs correctly, and gdb can not find the error, but valgrind can, so you are advised to use valgrind to check all possible memory invalid operations before you publish your software)
     //printf("%p %p\n", result_head, result_tail);
     //release the result list
     for(Node* p = result_head; p != NULL; p = p->next)

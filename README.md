@@ -9,7 +9,6 @@ basic knowledge and some advanced topics about Linux Programming
 - `doc` 用于存放文档
 - `src` 用于存放源码
 - `data` 用于存放书籍
-- **请勿使用中文目录名和文件名！文件名中请勿使用空格！**
 
 ---
 
@@ -25,4 +24,5 @@ basic knowledge and some advanced topics about Linux Programming
 ## Also See
 
 [study repo](https://github.com/bookug/study)
+[config repo](https://github.com/bookug/cloud/config)
 
