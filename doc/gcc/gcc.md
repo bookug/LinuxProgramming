@@ -326,7 +326,8 @@ ld -o run.exe example.o inc/list.o -lc -lm
 - https://blog.csdn.net/cnsword/article/details/7542696
 - https://blog.csdn.net/dc_726/article/details/48978849?utm_source=blogxgwz0
 
-C11和C14标准
+注意c11标准和C++11或C++14标准不同，前者是C的标准，后两者是C++的标准。
+事实上从c99标准开始，很多c语言的新特性，C++都已经不兼容了，比如restrict关键字。
 
 优化选项：O0 O1 O2 O3 Os。发行时一般用 O2 或 O3 ，O3选项据称有一定风险。
 

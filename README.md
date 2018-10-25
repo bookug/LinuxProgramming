@@ -24,5 +24,6 @@ basic knowledge and some advanced topics about Linux Programming
 ## Also See
 
 [study repo](https://github.com/bookug/study)
-[config repo](https://github.com/bookug/cloud/config)
+
+[config repo](https://github.com/bookug/cloud/tree/master/config)
 
