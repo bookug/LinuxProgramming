@@ -9,6 +9,7 @@ basic knowledge and some advanced topics about Linux Programming
 - `doc` 用于存放文档
 - `src` 用于存放源码
 - `data` 用于存放书籍
+- `advanced` 用于存放高级主题的内容，分主题存放
 
 ---
 
