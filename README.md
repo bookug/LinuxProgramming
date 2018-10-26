@@ -27,6 +27,9 @@ basic knowledge and some advanced topics about Linux Programming
 
 - [Lecture 00](advanced/Lecture00/Lecture00.md)：C/C++ 内存调试指南
 - [Lecture 01](advanced/Lecture01/Lecture01.md)：软件测试导论
+- [Lecture 02](advanced/Lecture02/Lecture02.md)：内外存索引优化
+- [Lecture 03](advanced/Lecture03/Lecture03.md)：项目组织
+- [Lecture 04](advanced/Lecture04/Lecture04.md)：开源社区
 
 ---
 
