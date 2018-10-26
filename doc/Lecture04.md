@@ -70,6 +70,10 @@ git diff
 git rm <filename>
 ```
 
+上面的命令会将文件从版本控制中移除，并将本地的文件删除。
+如果不使用这个命令，而只是把文件从本地删除，那么该文件还是在版本控制中。
+想查看版本控制中所有的文件，可以使用 `git ls-files` 。
+
 # 版本穿梭
 
 在我们进行了多次提交后，可以使用
@@ -218,6 +222,12 @@ git branch --set-upstream-to <branch-name> origin/<branch-name>
 更多 git 的使用细节可以从[https://book.git-scm.com/](https://book.git-scm.com/)获取更为详细的 git 使用手册，
 [廖雪峰的 Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 也是相当简明易懂的 git 教学网站(本文档 git 部分参考了此网站内容)。
+
+## Git Attributes
+
+## Git Ignore
+
+---
 
 # Doxygen
 

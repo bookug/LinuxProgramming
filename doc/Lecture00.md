@@ -43,6 +43,22 @@ grub 引导
 
 ---
 
+### 系统状态
+
+free -h
+
+top
+
+iotop
+
+df -h
+
+blkid
+
+mount
+
+---
+
 ### 设备管理
 
 mount
@@ -78,9 +94,15 @@ shell 设置
 
 禁用 firewalld ，统一使用 iptables
 
+禁用root登录(防止暴力攻击)，sshd 只允许指定用户登录，最好能限制域名登录(比如大部分服务器只允许内网访问)，设置ip黑名单
+
+lastlog
+
 nfs
 
 多机之间的通信
+
+ping tcping
 
 ---
 
@@ -91,6 +113,14 @@ nfs
 ulimit 软硬设置
 
 进程和线程都是走内核的 vfork() 接口，不过是用不一样的选项，线程也要占用 ulimit 里面的进程 ID
+
+ps aux|grep name   查看某进程，可获取进程PID
+
+ps -eLF
+
+kill -9
+
+killall
 
 ---
 
