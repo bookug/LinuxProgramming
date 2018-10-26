@@ -22,9 +22,26 @@ basic knowledge and some advanced topics about Linux Programming
 
 ---
 
+## Advanced Topics
+
+- [Lecture 00](advanced/Lecture00/Lecture00.md)：C/C++ 内存调试指南
+- [Lecture 01](advanced/Lecture01/Lecture01.md)：软件测试导论
+
+---
+
 ## Also See
 
 [study repo](https://github.com/bookug/study)
 
 [config repo](https://github.com/bookug/cloud/tree/master/config)
+
+[高端调试](http://advdbg.org/)
+
+[USENIX](https://www.usenix.org/)
+
+[StackOverflow](http://stackoverflow.com/)
+
+[Hack News](https://news.ycombinator.com/news)
+
+[YoLinux](http://www.yolinux.com/)
 
