@@ -37,6 +37,8 @@ UPS 备用电源
 
 grub 引导
 
+安装后可制作恢复光盘，紧急情况下可用于抢救
+
 断电前要关机
 
 查看电源电量，如何降低消耗
@@ -64,6 +66,10 @@ mount
 mount
 
 ntfs-3g
+
+fstab设置自动挂载若开机时找不到会无法启动，此时需要用启动盘进入修改fstab文件
+
+ssd挂载时的各种选项，文件系统，是否启用日志等等
 
 ---
 
@@ -139,6 +145,8 @@ rm 命令
 ls.sh 脚本
 
 setuid/setgid
+
+LD_LIBRARY_PATH
 
 /tmp sticky bit
 
