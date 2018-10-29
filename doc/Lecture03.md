@@ -261,6 +261,10 @@ p *$foo2
     ```
 - 在里面不能 r , s , n ，但是可以进行 p , bt ,where,list 等单纯查看类的操作。也可查看当时内存中的变量。
 
+##  gdb如何调试没有符号表(未加-g选项的编译)的程序
+
+https://blog.csdn.net/yygydjkthh/article/details/43318523?ref=myread
+
 ---
 
 # make
