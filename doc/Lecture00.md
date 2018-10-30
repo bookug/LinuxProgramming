@@ -163,4 +163,6 @@ LD_LIBRARY_PATH
 北京大学  Linux 俱乐部
 
 ---
-
+### 故障记录
+1. yum remove vim-* -y 会卸载所有vim的依赖项，包括sudo，而且没有提示。
+解决方案：用su命令进入root，重新安装sudo
