@@ -163,6 +163,64 @@ LD_LIBRARY_PATH
 北京大学  Linux 俱乐部
 
 ---
+
 ### 故障记录
-1. yum remove vim-* -y 会卸载所有vim的依赖项，包括sudo，而且没有提示。
-解决方案：用su命令进入root，重新安装sudo
+
+#### `yum remove vim-* -y` 会卸载所有vim的套件，甚至连sudo也删除了，而且没有提示。
+
+会出现这种情况，是Linux上的库依赖导致的问题。
+首先 `yum remove vim-*` 和 `yum remove vim` 不同，会把所有 vim 相关的套件都删除，包括 vim-minimal。
+用 `yum deplist sudo` 会发现，sudo 是依赖于 vim-minimal 的，具体是 visudo 这个命令，需要调用 vim-minimal里面的编辑器的功能。
+这样当 vim-minimal被移除后，sudo 无法正常工作，所以也会被移除。
+注意，Linux上删除一个软件时，会把所有依赖于这个软件的也会删除，所以一般不建议直接删除所有套件。
+
+sudo是用来临时获得管理员权限的重要途径，必须重新装回来。
+但此时sudo已经被删掉了，无法通过sudo来获得管理员权限安装sudo本身。
+可用su root命令进入root，重新安装sudo，这要求输入root账户的密码。
+安装好sudo后可用sudo -i命令进入root账户，这要求当前用户在sudoers中且输入该用户的密码。
+`su - xxx` 可进入xxx账户，要求输入xxx账户的密码，如果当前用户是root账户，则无需输入密码。
+
+添加或删除用户的管理员权限，可通过编辑`/etc/sudoers`文件来实现。
+这个文件默认对所有用户都只是只读的，即便拥有管理员权限，也必须先将其设置为root账户可写，再修改，最后再移除写权限。
+如果忘记移除sudoers的写权限，可能导致操作系统认为这不安全而禁用sudo，此时也只能登录root账户来修改。
+比较推荐的是另一种做法，使用`visudo`命令来修改管理员权限，不需要其他额外操作，修改完保存退出即可，当然这个命令本身需要管理员权限才能运行。
+
+如果忘记root密码？
+很麻烦，可以尝试使用安装系统后配套的Linux恢复光盘，或者通过另一个Linux U盘启动盘(推荐archlinux的启动盘)来进入文件系统并修改。
+一般建议不要轻易使用root密码，不要外泄，不要更改。
+将root密码手写并离线保存在安全的地方，只在必要时取出使用，使用后马上封存。
+不推荐用打印机是因为打印机里可能有信息记录，也不够安全。
+需要提供远程登录的服务器，建议禁止root用户远程登录，因为这是暴力攻击最常用的账户了。
+
+yum 的常用命令如下：
+
+- yum deplist libcurl    查看 libcurl 依赖于哪些软件包
+- rpm -qf /usr/lib64/libcurl.so 
+- yum search libcurl   查看哪些软件包依赖于 libcurl
+- yum check-update 检查可更新的所有软件包
+- yum update 下载更新系统已安装的所有软件包
+- yum upgrade 大规模的版本升级,与yum update不同的是,连旧的淘汰的包也升级
+- yum install 安装新软件包
+- yum update 更新指定的软件包
+- yum remove 卸载指定的软件包
+- yum groupinstall 安装指定软件组中的软件包
+- yum groupupdate 更新指定软件组中的软件包
+- yum groupremove 卸载指定软件组中的软件包
+- yum grouplist 查看系统中已经安装的和可用的软件组
+- yum list 列出资源库中所有可以安装或更新以及已经安装的rpm包
+- yum list 列出资源库中与正则表达式匹配的可以安装或更新以及已经安装的rpm包
+- yum list available 列出资源库中所有可以安装的rpm包
+- yum list available 列出资源库中与正则表达式匹配的所有可以安装的rpm包
+- yum list updates 列出资源库中所有可以更新的rpm包
+- yum list updates 列出资源库中与正则表达式匹配的所有可以更新的rpm包
+- yum list installed 列出资源库中所有已经安装的rpm包
+- yum list installed 列出资源库中与正则表达式匹配的所有已经安装的rpm包
+- yum list extras 列出已经安装的但是不包含在资源库中的rpm包
+- yum list extras 列出与正则表达式匹配的已经安装的但是不包含在资源库中的rpm包
+- yum list recent 列出最近被添加到资源库中的软件包
+- yum search 检测所有可用的软件的名称、描述、概述和已列出的维护者，查找与正则表达式匹配的值
+- yum provides 检测软件包中包含的文件以及软件提供的功能，查找与正则表达式匹配的值
+- yum clean headers 清除缓存中的rpm头文件
+- yum clean packages 清除缓存中rpm包文件
+- yum clean all 清除缓存中的rpm头文件和包文件
+
