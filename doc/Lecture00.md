@@ -1,3 +1,5 @@
+<span id="start"></span>
+
 ## Linux 服务器运维
 
 用作服务器时最好用终端 ssh 连接，而不用开远程桌面
@@ -166,7 +168,11 @@ LD_LIBRARY_PATH
 
 ### 故障记录
 
-#### `yum remove vim-* -y` 会卸载所有vim的套件，甚至连sudo也删除了，而且没有提示。
+#### CentOS系统：abrt-hook-ccpp 占用太大
+
+TODO
+
+#### CentOS系统： `yum remove vim-* -y` 会卸载所有vim的套件，甚至连sudo也删除了，而且没有提示。
 
 会出现这种情况，是Linux上的库依赖导致的问题。
 首先 `yum remove vim-*` 和 `yum remove vim` 不同，会把所有 vim 相关的套件都删除，包括 vim-minimal。
@@ -223,4 +229,8 @@ yum 的常用命令如下：
 - yum clean headers 清除缓存中的rpm头文件
 - yum clean packages 清除缓存中rpm包文件
 - yum clean all 清除缓存中的rpm头文件和包文件
+
+---
+
+[回到顶部](#start)
 
