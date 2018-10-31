@@ -1,12 +1,33 @@
+# Linux 服务器运维
+
 <span id="start"></span>
 
-## Linux 服务器运维
-
 用作服务器时最好用终端 ssh 连接，而不用开远程桌面
+
+<!-- markdown jump in a page -->
+<!-- https://blog.csdn.net/scythe666/article/details/51956450 -->
+
+## 目录
+
+- [入门材料](#material)
+- [发行版本](#release)
+- [电源管理](#battery)
+- [系统状态](#status)
+- [设备管理](#device)
+- [硬件驱动](#driver)
+- [用户管理](#user)
+- [网络管理](#network)
+- [任务调度](#schedule)
+- [版本控制](#version)
+- [安全问题](#safety)
+- [相关社区](#community)
+- [故障记录](#bugs)
 
 ---
 
 ### 入门材料
+
+<span id="material"></span>
 
 最好的方法就是强制自己只使用 Linux
 
@@ -17,6 +38,8 @@
 ---
 
 ### 各种发行版的主要区别
+
+<span id="release"></span>
 
 首先是包管理器不一样，社区不一样，理念不一样。
 其中 Gentoo 和Archlinux 是支持滚动升级的。
@@ -32,6 +55,8 @@ Ubuntu 过于在乎桌面，有些华而不实，性能和稳定性都是其缺�
 ---
 
 ### 电源管理
+
+<span id="battery"></span>
 
 UPS 备用电源
 
@@ -49,6 +74,8 @@ grub 引导
 
 ### 系统状态
 
+<span id="status"></span>
+
 free -h
 
 top
@@ -65,6 +92,8 @@ mount
 
 ### 设备管理
 
+<span id="device"></span>
+
 mount
 
 ntfs-3g
@@ -76,6 +105,8 @@ ssd挂载时的各种选项，文件系统，是否启用日志等等
 ---
 
 ### 硬件驱动
+
+<span id="driver"></span>
 
 如何选购
 
@@ -89,6 +120,7 @@ ssd挂载时的各种选项，文件系统，是否启用日志等等
 
 ### 用户管理
 
+<span id="user"></span>
 
 密码设置
 
@@ -99,6 +131,8 @@ shell 设置
 ---
 
 ### 网络管理
+
+<span id="network"></span>
 
 禁用 firewalld ，统一使用 iptables
 
@@ -115,6 +149,10 @@ ping tcping
 ---
 
 ### 任务调度
+
+<span id="schedule"></span>
+
+定时任务  crontab
 
 进程的优先级  nice
 
@@ -134,6 +172,8 @@ killall
 
 ### 版本控制
 
+<span id="version"></span>
+
 各种版本的软件
 
 各种版本的库  动态库与静态库
@@ -141,6 +181,8 @@ killall
 ---
 
 ### 安全问题
+
+<span id="safety"></span>
 
 rm 命令
 
@@ -152,13 +194,11 @@ LD_LIBRARY_PATH
 
 /tmp sticky bit
 
-### 其他
-
-定时任务  crontab
-
 ---
 
 ### 相关社区
+
+<span id="community"></span>
 
 各种开源社区
 
@@ -167,6 +207,8 @@ LD_LIBRARY_PATH
 ---
 
 ### 故障记录
+
+<span id="bugs"></span>
 
 #### CentOS系统：abrt-hook-ccpp 占用太大
 
