@@ -82,11 +82,18 @@ top
 
 iotop
 
+uptime
+
+htop
+
 df -h
 
 blkid
 
 mount
+
+uptime不需要sudo用户，但如果加上sudo，又没有管理员权限，即无法使用。
+默认这种情况，系统管理员会收到一封邮件，但也没有关系。
 
 ---
 
