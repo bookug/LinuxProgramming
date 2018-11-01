@@ -145,6 +145,20 @@ shell 设置
 
 用户操作历史记录，有时可用来检测是哪个误操作导致的问题
 
+sshpass
+
+bash alias
+
+ssh-keygen    
+
+https://www.jb51.net/article/101191.htm
+
+ssh pkuteach 需要修改 ~/.ssh/config文件
+
+还可以更改用户名，如 ssh xxx@pkuteach
+
+~/.ssh 的权限应是700，其下面文件的权限应是600 （新建文件的默认权限是644）
+
 ---
 
 ### 网络管理
