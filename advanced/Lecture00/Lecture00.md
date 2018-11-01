@@ -50,3 +50,19 @@ https://blog.csdn.net/hbyzl/article/details/8096007
 
 ---
 
+#### Core Dump
+
+gdb -c core.*
+
+kill -s SIGSEGV PID
+
+http://blog.sina.com.cn/s/blog_81fcea16010130w9.html
+
+默认情况下，core dump生成的文件名为core，而且就在程序当前目录下。新的core会覆盖已存在的core。通过修改/proc/sys/kernel/core_uses_pid文件，可以将进程的pid作为作为扩展名，生成的core文件格式为core.xxx，其中xxx即为pid
+
+https://blog.csdn.net/zzhongcy/article/details/42873015
+
+http://blog.chinaunix.net/uid-20279362-id-4962658.html
+
+---
+
