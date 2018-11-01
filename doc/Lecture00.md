@@ -41,6 +41,16 @@
 
 <span id="release"></span>
 
+```
+查看发行版本
+uname -r
+uname -a
+cat /proc/version
+cat /etc/issue
+yum -y install redhat-lsb
+lsb_release
+```
+
 首先是包管理器不一样，社区不一样，理念不一样。
 其中 Gentoo 和Archlinux 是支持滚动升级的。
 
