@@ -41,6 +41,16 @@
 
 <span id="release"></span>
 
+```
+查看发行版本
+uname -r
+uname -a
+cat /proc/version
+cat /etc/issue
+yum -y install redhat-lsb
+lsb_release
+```
+
 首先是包管理器不一样，社区不一样，理念不一样。
 其中 Gentoo 和Archlinux 是支持滚动升级的。
 
@@ -82,11 +92,18 @@ top
 
 iotop
 
+uptime
+
+htop
+
 df -h
 
 blkid
 
 mount
+
+uptime不需要sudo用户，但如果加上sudo，又没有管理员权限，即无法使用。
+默认这种情况，系统管理员会收到一封邮件，但也没有关系。
 
 ---
 
@@ -127,6 +144,20 @@ ssd挂载时的各种选项，文件系统，是否启用日志等等
 shell 设置
 
 用户操作历史记录，有时可用来检测是哪个误操作导致的问题
+
+sshpass
+
+bash alias
+
+ssh-keygen    
+
+https://www.jb51.net/article/101191.htm
+
+ssh pkuteach 需要修改 ~/.ssh/config文件
+
+还可以更改用户名，如 ssh xxx@pkuteach
+
+~/.ssh 的权限应是700，其下面文件的权限应是600 （新建文件的默认权限是644）
 
 ---
 
