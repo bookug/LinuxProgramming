@@ -17,6 +17,10 @@ Valgrind
 
 输出日志  log4cplus
 
+类型溢出问题：比如int爆上界，应用unsigned，或者unsigned也超过上界，应用long(64位机器上是八字节，为了提高可移植性，在使用其字节数时应用sizeof(long)而不应该直接用8)甚至long long
+
+也有可能出现unsigned爆下界，因为其无法取负值，此时反而应该用int
+
 ---
 
 #### stack
