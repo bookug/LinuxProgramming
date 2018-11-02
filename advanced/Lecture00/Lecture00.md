@@ -56,6 +56,10 @@ https://blog.csdn.net/hbyzl/article/details/8096007
 
 #### Core Dump
 
+操作系统对core dump的收集程序，abrt-hook-ccpp。
+系统收集的core dump 非常多时，abrt-hook-ccpp的内存占用会非常大。
+猜想：程序发生内存错误时，是否立即报错或到底到何时会报错，与操作系统对core dump的收集程度有关？积累到一定量才会直接报错？
+
 gdb -c core.*
 
 kill -s SIGSEGV PID
@@ -67,6 +71,19 @@ http://blog.sina.com.cn/s/blog_81fcea16010130w9.html
 https://blog.csdn.net/zzhongcy/article/details/42873015
 
 http://blog.chinaunix.net/uid-20279362-id-4962658.html
+
+---
+
+#### Shared Pointer in C++
+
+防止内存泄漏的有效工具，使用很方便可以在不同作用域维持对象的生存周期，，但也不可避免地会带来一些性能的下降。
+
+使用中同样要小心，只有当没有引用指向这个对象时，这个对象才会被析构。
+
+之前在一次C++ web服务的开发中，因为response是shared_ptr<HttpServer::Response>&类型，里面有一个ostream表示输出流，可以向客户端返回消息。
+里面还有一个引用计数，当引用计数降为0，这个对象就会被析构，ostream缓冲区的内容才会真正发给用户。
+如果我们自己定义了一个Task类，在里面使用了response，这样就多出了一个对Response对象的引用。
+只要Task类没被析构，Response对象就不会被析构，客户端也就永远无法接到内容。
 
 ---
 
