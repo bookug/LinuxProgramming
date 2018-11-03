@@ -176,7 +176,11 @@ sshpass
 
 bash alias
 
-ssh-keygen    
+ssh-keygen -t rsa
+
+ssh-copy-id -i .ssh/id_rsa.pub user@ip
+
+ed25519 is more secure than rsa
 
 https://www.jb51.net/article/101191.htm
 
