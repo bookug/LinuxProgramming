@@ -220,6 +220,8 @@ ping tcping
 
 进程的优先级  nice
 
+ionice
+
 ulimit 软硬设置
 
 进程和线程都是走内核的 vfork() 接口，不过是用不一样的选项，线程也要占用 ulimit 里面的进程 ID
