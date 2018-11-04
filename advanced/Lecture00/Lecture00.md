@@ -72,6 +72,13 @@ https://blog.csdn.net/zzhongcy/article/details/42873015
 
 http://blog.chinaunix.net/uid-20279362-id-4962658.html
 
+若是一个程序反复地跑查询，每个查询处理过程中都可能出现一些问题如越界操作，但是不一定会报错。
+操作系统会收集这些信息，直到问题累积到一定量才可能报错，而且维护程序abrt-hook-ccpp也会占用很大。
+因为一个程序是以一个进程的形式运行的，有自己的虚拟内存空间，所做的内存操作和引发的一切问题都会被记录。
+但若一个程序只跑一个查询，通过启动这个程序多次来跑多个查询，就不会有这个隐患。
+也不会出现一个个查询分开来跑可以，全合到一个程序跑就会报错停止的情况。
+因为一旦程序跑完一个查询，这个进程终止，对应的虚拟空间会被销毁，一切内存问题会被解决，abrt-hook-ccpp也不会占用越来越大！
+
 ---
 
 #### Shared Pointer in C++
@@ -103,6 +110,39 @@ http://blog.chinaunix.net/uid-20279362-id-4962658.html
 但是所有的问题，总是能找到解决方法的。
 对于一些不是很关键的问题，大可以用一些简单粗暴的方法，比如：
 不行就分，喜欢就买，重启试试。
+
+---
+
+#### 类型转换
+
+提高代码可读性与程序的可移植性
+
+10000000000不能被unsigned接收，如果是使用宏定义，必须加上L，即便要赋值给long类型，也必须加上L，输出时应使用ld选项
+
+类型截断，long赋值给unsigned
+
+要发现此类问题可多开警告选项  -Wall -Werror
+
+指针的赋值是不能隐式进行的，比如long* 赋值给unsigned*或者unsigned long*会报错
+
+size_t与ssize_t
+
+为了增强程序的可移植性，便有了size_t，它是为了方便系统之间的移植而定义的，不同的系统上，定义size_t可能不一样。
+在32位系统上 定义为 unsigned int 也就是说在32位系统上是32位无符号整形。在64位系统上定义为 unsigned long 也就是说在64位系统上是64位无符号整形。size_t一般用来表示一种计数，比如有多少东西被拷贝等。例如：sizeof操作符的结果类型是size_t，该类型保证能容纳实现所建立的最大对象的字节大小。 它的意义大致是“适于计量内存中可容纳的数据项目个数的无符号整数类型”。所以，它在数组下标和内存管理函数之类的地方广泛使用。而ssize_t这个数据类型用来表示可以被执行读写操作的数据块的大小.它和size_t类似,但必需是signed.意即：它表示的是signed size_t类型的。
+
+typedef unsigned long size_t
+
+ssize_t是signed size_t
+
+---
+
+#### Heap Corruption
+
+当输入超出了预分配的空间大小，就会覆盖该空间之后的一段存储区域，这就叫Heap Corruption。这通常也被用作黑客攻击的一种手段，因为如果在该空间之后的那段存储区域如果是比较重要的数据，就可以利用Heap Corruption来把这些数据修改掉了，后果当然可想而知了。
+
+http://www.cnblogs.com/lzjsky/archive/2010/09/27/1836807.html
+
+https://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/300734#comment-1558704
 
 ---
 

@@ -225,7 +225,17 @@ git branch --set-upstream-to <branch-name> origin/<branch-name>
 
 ## Git Attributes
 
+要慎重使用，无论是crlf还是lfs
+
 ## Git Ignore
+
+使用时要小心，之后添加文件有些可能需要手动添加，git add -f
+
+## 使用时发现的问题
+
+本地有修改时，git pull不能直接用，但git push仍然可以用。
+git checkout 也不能用，git stash可以用。
+git stash常与git stash pop配套使用，用于临时保存
 
 ---
 
