@@ -146,3 +146,13 @@ https://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-window
 
 ---
 
+#### File Descriptor
+
+fflush(NULL) is valid, but fclose(NULL) will cause segmenttaion fault
+
+xfree(p) free(p);p=NULL
+
+free(NULL) is valid
+
+---
+

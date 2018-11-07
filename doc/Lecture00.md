@@ -21,6 +21,7 @@
 - [版本控制](#version)
 - [安全问题](#safety)
 - [相关社区](#community)
+- [程序计时](#time)
 - [故障记录](#bugs)
 
 ---
@@ -273,6 +274,20 @@ LD_LIBRARY_PATH
 各种开源社区
 
 北京大学  Linux 俱乐部
+
+---
+
+### 程序计时
+
+<span id="time"></span>
+
+gprof好像在多线程计时也会有问题
+
+无非是两种思路：一种是数当前的时间，一种是计算cpu时钟周期数目
+
+gettimeofday无法抗睡眠
+
+clock_t无法抗多线程，比如pthread或openmp等等，avx的计时？
 
 ---
 
