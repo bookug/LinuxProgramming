@@ -20,6 +20,7 @@ basic knowledge and some advanced topics about Linux Programming
 - [Lecture 02](doc/Lecture02.md)：Linux 编程环境搭建 Vim+GCC+LD+GDB
 - [Lecture 03](doc/Lecture03.md)：代码规范 + gdb 进阶用法 + makefile
 - [Lecture 04](doc/Lecture04.md)：Git版本控制 + Doxygen 文档生成
+- [Lecture 05](doc/Lecture05.md)：Makefile 进阶使用
 
 ---
 
@@ -56,7 +57,7 @@ basic knowledge and some advanced topics about Linux Programming
 
 ## 贡献者
 
-部分内容来自于 [并行计算课程](https://github.com/RyanBernX/par2018) ，主要是基本主题的 Lecture 01, 03, 04 。
+部分内容来自于 [并行计算课程](https://github.com/RyanBernX/par2018) ，主要是基本主题的 Lecture 01, 03, 04，05 。
 
 ---
 
