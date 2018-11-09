@@ -289,6 +289,8 @@ gettimeofday无法抗睡眠
 
 clock_t无法抗多线程，比如pthread或openmp等等，avx的计时？
 
+https://stackoverflow.com/questions/12392278/measure-time-in-linux-time-vs-clock-vs-getrusage-vs-clock-gettime-vs-gettimeof
+
 ---
 
 ### 故障记录
