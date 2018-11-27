@@ -146,3 +146,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# doxygen files
+src/doxygen/Doxygenfile
+src/doxygen/html
+src/doxygen/latex
+

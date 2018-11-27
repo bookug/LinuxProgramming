@@ -22,16 +22,17 @@
     \brief a macro.
 */
 
-#DEFINE MAX 100
+#define MAX 100
 
 struct MyNode
 {
 	int val; /*!< value of the node */
-	struct MyNode next; /*!< pointer pointing to the next node. */
+	struct MyNode* next; /*!< pointer pointing to the next node. */
 };
 
-typedef MyNode Node;
+typedef struct MyNode Node;
 
 int val;
 
 int add(int *a, int i, int j);
+
