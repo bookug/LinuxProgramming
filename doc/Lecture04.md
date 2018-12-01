@@ -360,6 +360,7 @@ doxygen对代码的说明通过注释模块来实现，对于C风格的代码，
 # 对 doxygen 的补充
 
 默认用 `doxygen -g` 可以生成配置文件 Doxyfile ，修改后通过 `doxygen Doxyfile` 即可生成文档。
+(或者如果配置文件是使用默认的 Doxyfile的话，直接用doxygen命令也可以生成文档)
 要生成pdf文档，可以到文档的latex目录下用 `make` 编译，即可生成`refman.pdf` 文档。
 也可以到html目录中，打开网页，然后将网页打印为pdf文件上输出。
 生成pdf文档后，可以打开观看，在Linux上可以用轻量级的evince软件来阅读。
@@ -368,17 +369,17 @@ doxygen对代码的说明通过注释模块来实现，对于C风格的代码，
 ```
 /** \file */
 /**
-    * \author The Writer
-	  *
-	    * email: mailto:address@example.com or <mailto:address@example.com>
-		  * or address@example.com
-		    */
+  * \author The Writer
+  *
+  * email: mailto:address@example.com or <mailto:address@example.com>
+  * or address@example.com
+  */
 void fie(void);
 /**
-    * \author The Writer
-	  * (mailto:address@example.com) or (<mailto:address@example.com>)
-	    * or (address@example.com)
-		  */
+  * \author The Writer
+  * (mailto:address@example.com) or (<mailto:address@example.com>)
+  * or (address@example.com)
+  */
 void fie1(void);
 ```
 
