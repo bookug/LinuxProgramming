@@ -355,3 +355,35 @@ doxygen对代码的说明通过注释模块来实现，对于C风格的代码，
 
 更为详细和进阶的 doxygen 使用方法可以查看我们在安装时生成的说明文档。
 
+---
+
+# 对 doxygen 的补充
+
+默认用 `doxygen -g` 可以生成配置文件 Doxyfile ，修改后通过 `doxygen Doxyfile` 即可生成文档。
+要生成pdf文档，可以到文档的latex目录下用 `make` 编译，即可生成`refman.pdf` 文档。
+也可以到html目录中，打开网页，然后将网页打印为pdf文件上输出。
+生成pdf文档后，可以打开观看，在Linux上可以用轻量级的evince软件来阅读。
+所有这些命令，都可以写在makefile中，包括预览pdf的命令。
+
+```
+/** \file */
+/**
+    * \author The Writer
+	  *
+	    * email: mailto:address@example.com or <mailto:address@example.com>
+		  * or address@example.com
+		    */
+void fie(void);
+/**
+    * \author The Writer
+	  * (mailto:address@example.com) or (<mailto:address@example.com>)
+	    * or (address@example.com)
+		  */
+void fie1(void);
+```
+
+See also the doxygen manual: [http://www.doxygen.nl/](http://www.doxygen.nl/) especially:
+
+- [http://www.doxygen.nl/manual/markdown.html](http://www.doxygen.nl/manual/markdown.html) section about "Automatic Linking"
+- [http://www.doxygen.nl/manual/commands.html#cmdauthor](http://www.doxygen.nl/manual/commands.html#cmdauthor)
+
