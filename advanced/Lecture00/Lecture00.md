@@ -156,3 +156,25 @@ free(NULL) is valid
 
 ---
 
+#### Memory
+
+pmap -d PID
+
+一个进程到底有没有内存泄露？如果内存泄露数量太少，其他方法很难看到具体内存数量的变化。有什么办法呢？
+
+　　查看进程wuxi，进程号是29131，则：
+
+cat /proc/29131/status
+
+其中的VmRSS，就是该进程占用的内存。微小变化也能看到。据此判断内存有没有泄露。
+
+　　如果觉得输出太多，可以用新命令：
+
+cat /proc/5643/status | grep VmRSS
+
+top or ps
+
+using top, shift+M or shift+F then press n
+
+---
+
