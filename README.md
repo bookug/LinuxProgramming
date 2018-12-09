@@ -32,6 +32,7 @@ basic knowledge and some advanced topics about Linux Programming
 - [Lecture 03](advanced/Lecture03/Lecture03.md)：项目组织
 - [Lecture 04](advanced/Lecture04/Lecture04.md)：开源社区
 - [Lecture 05](advanced/Lecture05/Lecture05.md)：STL 注意事项
+- [Lecture 06](advanced/Lecture06/Lecture06.md)：多级存储及I/O 优化
 
 ---
 

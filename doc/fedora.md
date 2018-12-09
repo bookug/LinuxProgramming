@@ -11,6 +11,7 @@ Therefore, we will get great profit if using Fedora as workstations.
 ## LaTex
 
 Fedora 仓库自带的texlive有问题，应该从texlive官网下载安装，运行安装包中的tl-advance程序。
+(the GUI version is not so easy to run, in terminal version you must do some settings, search on Internet)
 
 英文用pdflatex编译，文献用bibtex编译。
 中文的话用xelatex编译，亲测可用， 前提是中文字体要安装好。
