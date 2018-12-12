@@ -34,6 +34,7 @@ basic knowledge and some advanced topics about Linux Programming
 - [Lecture 05](advanced/Lecture05/Lecture05.md)：STL 注意事项
 - [Lecture 06](advanced/Lecture06/Lecture06.md)：多级存储及I/O 优化
 - [Lecture 07](advanced/Lecture07/Lecture07.md)：多线程与多进程
+- [Lecture 08](advanced/Lecture08/Lecture08.md)：汇编代码
 
 ---
 
