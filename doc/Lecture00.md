@@ -365,6 +365,32 @@ yum 的常用命令如下：
 - yum clean packages 清除缓存中rpm包文件
 - yum clean all 清除缓存中的rpm头文件和包文件
 
+#### CentOS重启后卡在Crash recovery kernel arming
+
+此时内核在进行修复，主要内核崩溃后，有一个备用的小内核会启动并收集信息，这就是kdump的作用。
+之前的内核崩溃的错误越多，这里恢复用时越长，但无论如何应该先等这个过程完成。
+如果最终恢复成功，则系统正常启动，否则会显示fail，则再做进一步处理。
+
+Kdump是一个内核崩溃转储机制，在系统崩溃的时候，Kdump将捕获系统信息，这对于针对崩溃的原因非常有帮助。注意，Kdump需要预留一部分系统内存，而且这部分内存对于其他用户是不可用的。
+
+http://smilejay.com/2016/04/centos7-kdump-configuration/
+
+如果真的 无法启动，显示fail to start...，则用下面的方法
+
+https://www.cnblogs.com/albertrui/p/8127498.html
+
+#### 系统感染挖矿病毒，占据大量CPU和GPU资源
+
+https://unix.stackexchange.com/questions/400621/what-is-lib64-ld-linux-x86-64-so-2-and-why-can-it-be-used-to-execute-file
+
+https://blog.csdn.net/tanga842428/article/details/79303657
+
+https://blog.csdn.net/Hu_wen/article/details/51908597
+
+https://blog.csdn.net/ruixue2016/article/details/80008766
+
+https://blog.csdn.net/hero272285642/article/details/81064001
+
 ---
 
 [回到顶部](#start)
