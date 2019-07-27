@@ -358,6 +358,10 @@ ld -o run.exe example.o inc/list.o -lc -lm
 
 优化选项：O0 O1 O2 O3 Os。发行时一般用 O2 或 O3 ，O3选项据称有一定风险。
 
+GCC同时使用静态库和动态库链接:
+- https://blog.csdn.net/humadivinity/article/details/78890754
+- https://www.cnblogs.com/JimmyTY/p/5856217.html
+
 ---
 
 ## Linux 上程序的运行
