@@ -403,8 +403,10 @@ https://blog.csdn.net/hero272285642/article/details/81064001
 
 处理大文件时，vim不好用，因为它需要加载整个文件到内存。此时应该用流处理命令，每次读入并处理一行。
 但这种串行操作可能比较慢，所以需要考虑利用多核来并行。
+并行输出结果到文件应该用 `>>` ，用parallel命令来并行awk应该设置 `--line-buffer -q -m` 参数（否则引号和括号等特殊字符会无法识别），必要时还可以设置 `-j` （控制并行任务数）和 `-L` （控制每次读取的行数）参数。
 
 https://www.oschina.net/news/45477/use-cpu-cores-linux-commands
+https://blog.csdn.net/hahoo2009/article/details/95380026
 
 ---
 
