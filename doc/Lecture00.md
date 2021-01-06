@@ -23,6 +23,7 @@
 - [相关社区](#community)
 - [程序计时](#time)
 - [故障记录](#bugs)
+- [使用技巧](#tips)
 
 ---
 
@@ -390,6 +391,20 @@ https://blog.csdn.net/Hu_wen/article/details/51908597
 https://blog.csdn.net/ruixue2016/article/details/80008766
 
 https://blog.csdn.net/hero272285642/article/details/81064001
+
+---
+
+
+### 使用技巧
+
+<span id="tips"></span>
+
+#### 如何利用多核CPU来加速你的Linux命令 — awk, sed, bzip2, grep, wc等
+
+处理大文件时，vim不好用，因为它需要加载整个文件到内存。此时应该用流处理命令，每次读入并处理一行。
+但这种串行操作可能比较慢，所以需要考虑利用多核来并行。
+
+https://www.oschina.net/news/45477/use-cpu-cores-linux-commands
 
 ---
 
