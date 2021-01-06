@@ -406,6 +406,7 @@ https://blog.csdn.net/hero272285642/article/details/81064001
 并行输出结果到文件应该用 `>>` ，用parallel命令来并行awk应该设置 `--line-buffer -q -m` 参数（否则引号和括号等特殊字符会无法识别），必要时还可以设置 `-j` （控制并行任务数）和 `-L` （控制每次读取的行数）参数。
 
 https://www.oschina.net/news/45477/use-cpu-cores-linux-commands
+
 https://blog.csdn.net/hahoo2009/article/details/95380026
 
 ---
