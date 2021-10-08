@@ -42,8 +42,6 @@ basic knowledge and some advanced topics about Linux Programming
 
 [study repo](https://github.com/bookug/study)
 
-[config repo](https://github.com/bookug/cloud/tree/master/config)
-
 [Learn Coding with Open Source](https://github.com/zhuangbiaowei/learn-with-open-source)
 
 [高端调试](http://advdbg.org/)
