@@ -1,0 +1,2 @@
+- parallel  command
+- the implement of Linux commands (APUE)
